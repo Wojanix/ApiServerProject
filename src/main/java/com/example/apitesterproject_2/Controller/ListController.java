@@ -69,7 +69,7 @@ public class ListController {
 
             productList.add(product);
         }
-        //check shit if work github
+        //check shit if work githubasfassafasff
         return ResponseEntity.ok(productList);
     }
 
