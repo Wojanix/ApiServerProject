@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.http.MediaType;
+
+import java.awt.*;
 
 @Data
 @Builder
@@ -15,4 +18,5 @@ public class Product {
     private String productName;
     private String productBrand;
     private String productDescription;
+    private String imageLink;
 }

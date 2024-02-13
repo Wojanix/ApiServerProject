@@ -4,12 +4,12 @@ import com.example.apitesterproject_2.Model.Car;
 import com.example.apitesterproject_2.Model.EngineType;
 import com.example.apitesterproject_2.Model.shop.Product;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -18,6 +18,7 @@ import java.util.Random;
 @RestController
 @RequestMapping("/listcontroller")
 @RequiredArgsConstructor
+@Controller
 public class ListController {
     private final Constants constants;
 
@@ -56,22 +57,30 @@ public class ListController {
     }
 
     @RequestMapping("/getProductList/{amount}")
-    ResponseEntity<?> getProductList(@PathVariable int amount) {
+    ResponseEntity<?> getProductList(@PathVariable int amount) throws IOException {
         List<Product> productList = new ArrayList<>();
 
         for (int i = 0; i < amount; i++) {
             Product product = Product.builder()
                     .price(generateRandomNumber(1, 200))
-                    .productBrand(constants.getPRODUCT_BRANDS()[generateRandomNumber(0, constants.getPRODUCT_BRANDS().length)])
-                    .productDescription(constants.getPRODUCT_DESCRIPTIONS()[generateRandomNumber(0, constants.getPRODUCT_DESCRIPTIONS().length)])
-                    .productName(constants.getPRODUCT_NAMES()[generateRandomNumber(0, constants.getPRODUCT_NAMES().length)])
+                    .productBrand(constants.getPRODUCT_BRANDS()[generateRandomNumber(0, constants.getPRODUCT_BRANDS().length-1)])
+                    .productDescription(constants.getPRODUCT_DESCRIPTIONS()[generateRandomNumber(0, constants.getPRODUCT_DESCRIPTIONS().length-1)])
+                    .productName(constants.getPRODUCT_NAMES()[generateRandomNumber(0, constants.getPRODUCT_NAMES().length-1)])
+                    .imageLink(constants.getPRODUCT_IMAGES()[generateRandomNumber(0, constants.getPRODUCT_IMAGES().length-1)])
                     .build();
 
             productList.add(product);
         }
         //check shit if work githubasfassafasff
-        return ResponseEntity.ok(productList);
+        return ResponseEntity.ok().body(productList);
     }
+
+    @GetMapping(value = "/getImage/{imageLink}", produces = MediaType.IMAGE_PNG_VALUE)
+    public @ResponseBody byte[] getPng(@PathVariable String imageLink) throws IOException {
+        System.out.println(2);
+        return getClass().getResourceAsStream(imageLink).readAllBytes();
+    }
+
 
     public static int generateRandomNumber(int min, int max) {
         if (min >= max) {
