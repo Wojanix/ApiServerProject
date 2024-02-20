@@ -45,25 +45,42 @@ public class Constants {
 
     // products
     private final String[] PRODUCT_NAMES = {
-            "Widget", "Gizmo", "Thingamabob", "Doodad", "Doohickey",
-            "Contraption", "Apparatus", "Gadget", "Gubbins", "Grommet"
+            "Nike Blazers",
+            "Nike Air Force 1'07",
+            "Nike Jordan High",
+            "Nike Air Force Marshmallow",
+            "Nike Air Force 1",
+            "Nike Dunk High",
+            "Nike Dunk Low"
+
     };
     private final String[] PRODUCT_BRANDS = {
-            "Acme", "Initech", "Widgets Inc.", "TechCorp", "Gizmo Co.",
-            "Thingamajigs Ltd.", "Doodad Enterprises", "Widget World", "Gadget Innovations"
+            "Nike",
+            "Nike",
+            "Nike",
+            "Nike",
+            "Nike",
+            "Nike",
+            "Nike"
     };
     private final String[] PRODUCT_DESCRIPTIONS = {
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            "Man Shoes Nike Blazers",
+            "Man Shoes Nike Air Force 1'07",
+            "Woman Shoes Nike Jordan High Blue",
+            "Unisex Shoes Nike Air Force Marshmallow",
+            "Woman Shoes Nike Air Force 1",
+            "Man Shoes Nike Dunk High Aluminum",
+            "Woman Shoes Nike Dunk Low Grey"
     };
 
     private final String[] PRODUCT_IMAGES = {
-
-            "getImage/classpath::images/products/NIKE_BLAZERS.png",
-
-            "getImage/classpath::images/products/NIKE_BLAZERS.png"
+            "localhost:8080/listcontroller/getImage/classpath::images/products/NIKE_BLAZERS.png",
+            "localhost:8080/listcontroller/getImage/classpath::images/products/NIKE_AIR_FORCE_1_07.png",
+            "localhost:8080/listcontroller/getImage/classpath::images/products/NIKE_JORDAN_HIGH_BLUE.png",
+            "localhost:8080/listcontroller/getImage/classpath::images/products/NIKE_AIR_FORCE_MARSHMALLOW.png",
+            "localhost:8080/listcontroller/getImage/classpath::images/products/NIKE_AIR_FORCE_1_LOW_BLUE.png",
+            "localhost:8080/listcontroller/getImage/classpath::images/products/NIKE_DUNK_HIGH_ALUMINUM.png",
+            "localhost:8080/listcontroller/getImage/classpath::images/products/NIKE_DUNK_LOW_GREY.png",
     };
 
 }

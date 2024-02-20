@@ -61,12 +61,15 @@ public class ListController {
         List<Product> productList = new ArrayList<>();
 
         for (int i = 0; i < amount; i++) {
+            if(i==constants.getPRODUCT_BRANDS().length){
+                return ResponseEntity.ok().body(productList);
+            }
             Product product = Product.builder()
                     .price(generateRandomNumber(1, 200))
-                    .productBrand(constants.getPRODUCT_BRANDS()[generateRandomNumber(0, constants.getPRODUCT_BRANDS().length-1)])
-                    .productDescription(constants.getPRODUCT_DESCRIPTIONS()[generateRandomNumber(0, constants.getPRODUCT_DESCRIPTIONS().length-1)])
-                    .productName(constants.getPRODUCT_NAMES()[generateRandomNumber(0, constants.getPRODUCT_NAMES().length-1)])
-                    .imageLink(constants.getPRODUCT_IMAGES()[generateRandomNumber(0, constants.getPRODUCT_IMAGES().length-1)])
+                    .productBrand(constants.getPRODUCT_BRANDS()[i])
+                    .productDescription(constants.getPRODUCT_DESCRIPTIONS()[i])
+                    .productName(constants.getPRODUCT_NAMES()[i])
+                    .imageLink(constants.getPRODUCT_IMAGES()[i])
                     .build();
 
             productList.add(product);
@@ -77,8 +80,9 @@ public class ListController {
 
     @GetMapping(value = "/getImage/{imageLink}", produces = MediaType.IMAGE_PNG_VALUE)
     public @ResponseBody byte[] getPng(@PathVariable String imageLink) throws IOException {
-        System.out.println(2);
-        return getClass().getResourceAsStream(imageLink).readAllBytes();
+        String modifiedString = imageLink.replace('-', '/');
+        byte[] response = getClass().getResourceAsStream(modifiedString).readAllBytes();
+        return response;
     }
 
 
