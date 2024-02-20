@@ -1,4 +1,4 @@
-package com.example.apitesterproject_2.Model;
+package com.example.apitesterproject_2.Model.CarModels;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

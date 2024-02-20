@@ -1,7 +1,7 @@
 package com.example.apitesterproject_2.Controller;
 import com.example.apitesterproject_2.ConstantsPackage.Constants;
-import com.example.apitesterproject_2.Model.Car;
-import com.example.apitesterproject_2.Model.EngineType;
+import com.example.apitesterproject_2.Model.CarModels.Car;
+import com.example.apitesterproject_2.Model.CarModels.EngineType;
 import com.example.apitesterproject_2.Model.shop.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;

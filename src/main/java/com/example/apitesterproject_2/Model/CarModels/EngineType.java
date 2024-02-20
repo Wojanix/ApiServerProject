@@ -1,4 +1,4 @@
-package com.example.apitesterproject_2.Model;
+package com.example.apitesterproject_2.Model.CarModels;
 
 public enum EngineType {
     GASOLINE,
