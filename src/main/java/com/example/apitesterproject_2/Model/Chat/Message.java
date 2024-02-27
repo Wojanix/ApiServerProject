@@ -19,4 +19,7 @@ public class Message {
     private String text;
     private String chat_address;
     private Long user_id;
+    private String user_name;
+    private String type;
+    private String file_path;
 }

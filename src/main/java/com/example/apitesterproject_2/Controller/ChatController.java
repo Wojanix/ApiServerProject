@@ -20,7 +20,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/chat")
+//@RequestMapping("/chat")
 @RequiredArgsConstructor
 @Controller
 public class ChatController extends TextWebSocketHandler {
